@@ -8,6 +8,7 @@ export const me = async (req, res) => {
         const user = await UserModel.findById(req.userId);
 
         if (!user) {
+            console.log('123');
             return res.status(404).json({
                 massage: 'Пользователь не найден',
             });
