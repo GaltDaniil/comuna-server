@@ -40,6 +40,10 @@ app.post('/ads', adsCreateValidation, AdsController.create);
 app.delete('/ads', AdsController.deleteAds);
 app.patch('/ads', adsCreateValidation, AdsController.update);
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+});
+
 // Чтобы сервер слушал определенный порт
 app.listen(4444, (err) => {
     if (err) {
