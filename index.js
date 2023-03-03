@@ -40,14 +40,14 @@ app.post('/ads', adsCreateValidation, AdsController.create);
 app.delete('/ads', AdsController.deleteAds);
 app.patch('/ads', adsCreateValidation, AdsController.update);
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
 });
 
 // Чтобы сервер слушал определенный порт
-app.listen(4444, (err) => {
+app.listen(4444, host, (err) => {
     if (err) {
         return console.log(err);
     }
-    console.log('Server OK');
+    console.log('Server OK. Port is 4444 and Host is ' + host);
 });
