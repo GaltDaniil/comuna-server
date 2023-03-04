@@ -45,9 +45,9 @@ app.get('/*', (req, res) => {
 });
 
 // Чтобы сервер слушал определенный порт
-app.listen(4444, host, (err) => {
+app.listen(4444, (err) => {
     if (err) {
         return console.log(err);
     }
-    console.log('Server OK. Port is 4444 and Host is ' + host);
+    console.log('Server OK');
 });
