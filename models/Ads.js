@@ -34,6 +34,10 @@ const AdsSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
+        status: {
+            type: Number,
+            default: 0,
+        },
         location: {
             type: String,
             required: true,
