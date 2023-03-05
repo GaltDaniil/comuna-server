@@ -10,11 +10,15 @@ const AdsSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        price: {
+        categorie: {
             type: String,
             required: true,
         },
-        categorie: {
+        condition: {
+            type: String,
+            required: true,
+        },
+        price: {
             type: String,
             required: true,
         },
@@ -38,9 +42,13 @@ const AdsSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
+        endDate: {
+            type: String,
+            default: 0,
+        },
         location: {
             type: String,
-            required: true,
+            default: null,
         },
     },
     {
