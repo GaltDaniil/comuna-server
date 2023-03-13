@@ -27,6 +27,31 @@ export const me = async (req, res) => {
     }
 };
 
+export const isSeller = async (req, res) => {
+    try {
+        const user = await UserModel.findById(req.body.userId);
+
+        if (!user) {
+            console.log('Не найден юзер');
+            return res.status(404).json({
+                massage: 'Пользователь не найден',
+            });
+        }
+
+        const { fullName, avatarUrl, ...userData } = user._doc;
+
+        res.json({
+            fullName,
+            avatarUrl,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            massage: 'Нет доступа',
+        });
+    }
+};
+
 export const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({

@@ -28,6 +28,7 @@ export const adsCreateValidation = [
     body('imagesUrl', 'Добавьте изображение для товара или услуги').isArray({ min: 1 }),
     body('title', 'Введите краткий заголовог').isLength({ min: 5, max: 220 }).isString(),
     body('description', 'Введите подробное описание').isLength({ min: 100, max: 2200 }).isString(),
-    body('price', 'укажите цену').isLength({ min: 1, max: 10 }).isNumeric(),
+    body('price', 'укажите цену').isLength({ min: 1, max: 10 }).isString(),
     body('categorie', 'укажите категорию').isLength({ min: 1, max: 10 }).isNumeric(),
+    body('currency', 'укажите валюту').isString(),
 ];

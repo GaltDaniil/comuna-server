@@ -23,10 +23,15 @@ const UserSchema = new mongoose.Schema(
             type: String,
             default: '',
         },
-        avatar: {
+        avatarUrl: {
             type: String,
+            default: 'img3.jpg',
         },
         ads: {
+            type: Array,
+            default: [],
+        },
+        chats: {
             type: Array,
             default: [],
         },

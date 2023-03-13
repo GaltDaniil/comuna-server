@@ -10,8 +10,8 @@ const AdsSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        categorie: {
-            type: String,
+        category: {
+            type: Number,
             required: true,
         },
         condition: {
@@ -19,6 +19,10 @@ const AdsSchema = new mongoose.Schema(
             required: true,
         },
         price: {
+            type: String,
+            required: true,
+        },
+        currency: {
             type: String,
             required: true,
         },
@@ -34,7 +38,7 @@ const AdsSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
-        user: {
+        userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
